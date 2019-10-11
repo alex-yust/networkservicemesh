@@ -243,7 +243,10 @@ workflows:
   version: 2
   build-and-test:
     jobs:
-      - test-sanity-check
+      - test-sanity-check:
+          filters:
+            branches:
+              only: disable-run
       - test-static-code-analysis:
           name: "test-static-code-analysis"
           requires:
